@@ -1,0 +1,17 @@
+﻿@model Sales_OOP.Entity.Customer
+@{
+    ViewData["Title"] = "UpdateCustomer";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>Update Customer</h1>
+
+<form method="post">
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Price")
+    @Html.TextBoxFor(x => x.CustomerCity, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Update Customer</button>
+</form>

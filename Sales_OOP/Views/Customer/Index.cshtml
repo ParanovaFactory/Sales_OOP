@@ -1,0 +1,30 @@
+﻿@using Sales_OOP.Entity
+@model List<Customer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>Customer List</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CustomerId</td>
+            <td>@item.CustomerName</td>
+            <td>@item.CustomerCity</td>
+            <td><a href="/Customer/DeleteCustomer/@item.CustomerId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Customer/UpdateCustomer/@item.CustomerId" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Customer/AddCustomer" class="btn btn-primary">Add new Customer</a>
+
